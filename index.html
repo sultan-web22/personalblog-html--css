@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern personal blog website">
+    <meta name="robots" content="index,follow">
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="header">
+        <div class="logo">MyThoughts.</div>
+        <ul class="nav-links">
+            <li><a href="#daily">daily</a></li>
+            <li><a href="#design">design</a></li>
+            <li><a href="#programming">programming</a></li>
+            <li><a href="#courses">courses</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="left-area">
+            <h2>What's on your mind?</h2> 
+            <div class="form-group">
+                <label for="title-text">Blog Title</label>
+                <input type="text" id="title-text" class="title-text" placeholder="Give your thought a title...">
+            </div>
+            <div class="form-group">
+                <label for="message">Content</label>
+                <textarea name="message" id="message" placeholder="Start writing down your ideas..."></textarea>
+            </div>
+            <button type="submit" id="submit-blog">Publish Post</button>
+        </section>
+
+        <section class="right-area">
+            <article class="item">
+                <div class="blog-meta">
+                    <span class="category tag-programming">Programming</span>
+                    <time datetime="2026-06-18">June 18, 2026</time>
+                </div>
+                <h3>Mastering CSS Grid and Container Queries</h3>
+                <p>Today I refactored my entire layout using modern CSS features. Stacking layouts without breaking responsiveness is a superpower.</p>
+                <a href="#" class="read-more">Read Full Story →</a>
+            </article>
+
+            <article class="item">
+                <div class="blog-meta">
+                    <span class="category tag-design">Design</span>
+                    <time datetime="2026-06-17">June 17, 2026</time>
+                </div>
+                <h3>The Power of Intent-Based UI Layouts</h3>
+                <p>Exploring how minimalist UI aesthetics can reduce cognitive fatigue for users visiting dashboard-heavy applications.</p>
+                <a href="#" class="read-more">Read Full Story →</a>
+            </article>
+
+            <article class="item">
+                <div class="blog-meta">
+                    <span class="category tag-daily">Daily</span>
+                    <time datetime="2026-06-15">June 15, 2026</time>
+                </div>
+                <h3>Consistency Over Intensity</h3>
+                <p>Reflecting on coding every day vs. burning out over weekends. A look into maintaining sustainable student life schedules.</p>
+                <a href="#" class="read-more">Read Full Story →</a>
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Personal Blog. Built By Sultan.</p>
+    </footer>
+</body>
+</html>

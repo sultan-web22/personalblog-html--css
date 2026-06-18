@@ -1,0 +1,271 @@
+/* --- Global & Theme Variables --- */
+:root {
+  --bg-color: #fafafa;
+  --panel-bg: #ffffff;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --accent: #119292;
+  --accent-light: rgb(90, 209, 177);
+  --border-color: #e2e8f0;
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --transition: all 0.25s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "navbar"
+    "main" 
+    "footer";  
+}
+
+nav { grid-area: navbar; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+
+/* --- Layout Structure --- */
+main {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile first stack */
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* --- Left Area: Modern Composer --- */
+.left-area {
+  background: var(--panel-bg);
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  height: fit-content;
+  container-type: inline-size;
+}
+
+.left-area h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.title-text, #message {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: #f8fafc;
+  transition: var(--transition);
+}
+
+.title-text:focus, #message:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: var(--panel-bg);
+  box-shadow: 0 0 0 3px rgba(17, 146, 146, 0.15);
+}
+
+#message {
+  min-height: 180px;
+  resize: vertical;
+}
+
+#submit-blog {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+#submit-blog:hover {
+  background-color: #0e7a7a;
+  transform: translateY(-1px);
+}
+
+/* --- Right Area: Modern Feed Layout --- */
+.right-area {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+/* --- The Modern Blog Item (Card) --- */
+.item {
+  background: var(--panel-bg);
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  border-color: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.blog-meta time {
+  color: var(--text-muted);
+}
+
+.category {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+/* Dynamically styled tags */
+.tag-programming { background: #e0f2fe; color: #0369a1; }
+.tag-design { background: #f3e8ff; color: #6b21a8; }
+.tag-daily { background: #fef3c7; color: #92400e; }
+
+.item h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.35em;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.item p {
+  margin: 0 0 16px 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.read-more {
+  margin-top: auto; /* Pushes link to the bottom of card */
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.read-more:hover {
+  color: #0e7a7a;
+  text-decoration: underline;
+}
+
+/* --- Header & Navigation --- */
+.header {
+  background-color: var(--panel-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.nav-links {
+  list-style: none;
+  margin: 15px 0 0 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  display: block; 
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* --- Desktop Responsive Views (768px and up) --- */
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 4fr 6fr; /* Fixed splitting structure */
+    align-items: start;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;        
+  }
+
+  .nav-links {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 0;
+  }
+
+  .nav-links a {
+    padding: 5px 20px; 
+  }
+}
+
+/* --- Container Query Optimization --- */
+@container (min-width: 450px) {
+  .left-area h2 {
+    font-size: 1.8em;
+  }
+  #submit-blog {
+    width: auto; /* Makes button compact if screen size is wide enough */
+  }
+}
